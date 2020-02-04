@@ -94,9 +94,21 @@ inline tList<T>::tList(const tList & other)
 template<typename T>
 inline tList<T> & tList<T>::operator=(const tList & rhs)
 {
-	this = new tList(rhs);
+	if (rhs.head != nullptr)
+	{
+		clear();
+		Node * otherVal = rhs.head;
+		iterator itera = rhs.head;
+		while (itera != end())
+		{
+			itera++;
+			push_back(otherVal->data);
+			otherVal = otherVal->next;
+		}
+		listSize = rhs.listSize;
+	}
 
-	return this;
+	return *this;
 }
 
 //  A destructor that deletes all of the data.
@@ -147,7 +159,11 @@ inline void tList<T>::pop_front()
 template<typename T>
 inline void tList<T>::push_back(const T & val)
 {
-	if (tail != nullptr) 
+	if (head == nullptr)
+	{
+	push_front(val);
+	}
+	else if (tail != nullptr)
 	{
 		Node * newVal = new Node;
 		newVal->data = val;
@@ -156,10 +172,6 @@ inline void tList<T>::push_back(const T & val)
 		tail = tail->next;
 		tail->next = nullptr;
 		listSize++;
-	}
-	else if (head == nullptr) 
-	{
-		push_front(val);
 	}
 	else
 	{

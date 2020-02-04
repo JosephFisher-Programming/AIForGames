@@ -18,6 +18,10 @@ int main()
 	list.push_back(7);
 	list.push_back(6);
 
+	//  Makes a new list equal to another.
+	tList<int> listManCopy;
+	listManCopy = list;
+
 	//  Resizes the list to a length of three.
 	list.resize(3);
 
@@ -57,6 +61,18 @@ int main()
 	for (auto it = cpyList.begin(); it != cpyList.end(); ++it)
 	{
 		std::cout << "Joe" << std::endl;
+	}
+
+	//  Iterates trough the whole list and writes Jojo to the console each time.
+	for (auto it = list.begin(); it != list.end(); ++it)
+	{
+		std::cout << "Jojo" << std::endl;
+	}
+
+	//  Iterates trough the whole list and writes Jo to the console each time.
+	for (auto it = listManCopy.begin(); it != listManCopy.end(); ++it)
+	{
+		std::cout << "Jo" << std::endl;
 	}
 
 	//  A loop to keep the console open.

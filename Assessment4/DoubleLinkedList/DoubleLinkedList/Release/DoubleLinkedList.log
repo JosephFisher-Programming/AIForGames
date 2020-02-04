@@ -1,9 +1,11 @@
 ﻿  Main.cpp
-c:\users\s199027\source\repos\assessment3\doublelinkedlist\doublelinkedlist\doublelinkedlists.h(307): warning C4018: '>': signed/unsigned mismatch
-  c:\users\s199027\source\repos\assessment3\doublelinkedlist\doublelinkedlist\doublelinkedlists.h(306): note: while compiling class template member function 'void tList<int>::resize(size_t)'
-  c:\users\s199027\source\repos\assessment3\doublelinkedlist\doublelinkedlist\main.cpp(22): note: see reference to function template instantiation 'void tList<int>::resize(size_t)' being compiled
-  c:\users\s199027\source\repos\assessment3\doublelinkedlist\doublelinkedlist\main.cpp(10): note: see reference to class template instantiation 'tList<int>' being compiled
+c:\users\s199027\source\repos\assessment4\doublelinkedlist\doublelinkedlist\doublelinkedlists.h(319): warning C4018: '>': signed/unsigned mismatch
+  c:\users\s199027\source\repos\assessment4\doublelinkedlist\doublelinkedlist\doublelinkedlists.h(318): note: while compiling class template member function 'void tList<int>::resize(size_t)'
+  c:\users\s199027\source\repos\assessment4\doublelinkedlist\doublelinkedlist\main.cpp(26): note: see reference to function template instantiation 'void tList<int>::resize(size_t)' being compiled
+  c:\users\s199027\source\repos\assessment4\doublelinkedlist\doublelinkedlist\main.cpp(10): note: see reference to class template instantiation 'tList<int>' being compiled
   Generating code
-  All 32 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  3 of 33 functions ( 9.1%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    7 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
-  DoubleLinkedList.vcxproj -> C:\Users\s199027\source\repos\Assessment3\DoubleLinkedList\Release\DoubleLinkedList.exe
+  DoubleLinkedList.vcxproj -> C:\Users\s199027\source\repos\Assessment4\DoubleLinkedList\Release\DoubleLinkedList.exe
