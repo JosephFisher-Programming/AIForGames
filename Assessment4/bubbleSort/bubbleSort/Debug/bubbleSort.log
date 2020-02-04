@@ -1,0 +1,11 @@
+﻿  main.cpp
+c:\users\s199027\source\repos\assessment3\bubblesort\bubblesort\main.cpp(22): warning C4018: '<': signed/unsigned mismatch
+c:\users\s199027\source\repos\assessment3\bubblesort\bubblesort\main.cpp(33): warning C4018: '<': signed/unsigned mismatch
+c:\users\s199027\source\repos\assessment3\bubblesort\bubblesort\tvector.h(93): warning C4018: '<': signed/unsigned mismatch
+  c:\users\s199027\source\repos\assessment3\bubblesort\bubblesort\tvector.h(88): note: while compiling class template member function 'void tVector<int>::reserve(size_t)'
+  c:\users\s199027\source\repos\assessment3\bubblesort\bubblesort\tvector.h(111): note: see reference to function template instantiation 'void tVector<int>::reserve(size_t)' being compiled
+  c:\users\s199027\source\repos\assessment3\bubblesort\bubblesort\tvector.h(43): note: while compiling class template member function 'tVector<int>::tVector(void)'
+  c:\users\s199027\source\repos\assessment3\bubblesort\bubblesort\main.cpp(9): note: see reference to function template instantiation 'tVector<int>::tVector(void)' being compiled
+  c:\users\s199027\source\repos\assessment3\bubblesort\bubblesort\main.cpp(9): note: see reference to class template instantiation 'tVector<int>' being compiled
+c:\users\s199027\source\repos\assessment3\bubblesort\bubblesort\tvector.h(99): warning C4018: '<': signed/unsigned mismatch
+  bubbleSort.vcxproj -> C:\Users\s199027\source\repos\Assessment3\bubbleSort\Debug\bubbleSort.exe

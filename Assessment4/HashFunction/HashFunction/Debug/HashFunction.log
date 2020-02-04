@@ -1,0 +1,6 @@
+﻿  main.cpp
+c:\users\s199027\source\repos\hashfunction\hashfunction\hash.h(95): warning C4018: '<': signed/unsigned mismatch
+  c:\users\s199027\source\repos\hashfunction\hashfunction\hash.h(93): note: while compiling class template member function 'tHashmap<std::string,int>::tHashmap(const tHashmap<std::string,int> &)'
+  c:\users\s199027\source\repos\hashfunction\hashfunction\main.cpp(12): note: see reference to function template instantiation 'tHashmap<std::string,int>::tHashmap(const tHashmap<std::string,int> &)' being compiled
+  c:\users\s199027\source\repos\hashfunction\hashfunction\main.cpp(9): note: see reference to class template instantiation 'tHashmap<std::string,int>' being compiled
+  HashFunction.vcxproj -> C:\Users\s199027\source\repos\HashFunction\Debug\HashFunction.exe

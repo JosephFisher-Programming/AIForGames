@@ -1,0 +1,9 @@
+﻿  Main.cpp
+c:\users\s199027\source\repos\assessment3\doublelinkedlist\doublelinkedlist\doublelinkedlists.h(307): warning C4018: '>': signed/unsigned mismatch
+  c:\users\s199027\source\repos\assessment3\doublelinkedlist\doublelinkedlist\doublelinkedlists.h(306): note: while compiling class template member function 'void tList<int>::resize(size_t)'
+  c:\users\s199027\source\repos\assessment3\doublelinkedlist\doublelinkedlist\main.cpp(22): note: see reference to function template instantiation 'void tList<int>::resize(size_t)' being compiled
+  c:\users\s199027\source\repos\assessment3\doublelinkedlist\doublelinkedlist\main.cpp(10): note: see reference to class template instantiation 'tList<int>' being compiled
+  Generating code
+  All 32 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  DoubleLinkedList.vcxproj -> C:\Users\s199027\source\repos\Assessment3\DoubleLinkedList\Release\DoubleLinkedList.exe
