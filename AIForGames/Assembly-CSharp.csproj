@@ -64,10 +64,13 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\AIController.cs" />
     <Compile Include="Assets\Scripts\agentScript.cs" />
+    <Compile Include="Assets\Scripts\basicEvade.cs" />
     <Compile Include="Assets\Scripts\basicFlee.cs" />
+    <Compile Include="Assets\Scripts\basicNavScript.cs" />
     <Compile Include="Assets\Scripts\basicPursue.cs" />
     <Compile Include="Assets\Scripts\basicSteer.cs" />
     <Compile Include="Assets\Scripts\basicWander.cs" />
+    <Compile Include="Assets\Scripts\moveObject.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/s199027/source/repos/AIForGames/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

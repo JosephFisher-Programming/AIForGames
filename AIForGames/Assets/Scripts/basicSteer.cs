@@ -43,9 +43,4 @@ public class basicSteer : MonoBehaviour
 
         Debug.DrawRay(transform.position, transform.forward * 10, Color.green);
     }
-
-    public Vector3 velocityVoid()
-    {
-        return velocity;
-    }
 }
