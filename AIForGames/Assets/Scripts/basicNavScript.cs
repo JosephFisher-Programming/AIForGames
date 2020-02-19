@@ -44,7 +44,7 @@ public class basicNavScript : MonoBehaviour
             cornerNum = 0;
         }
 
-        if(Vector3.Distance(transform.position, personalPath.corners[cornerNum]) < .5f)
+        if(Vector3.Distance(transform.position, personalPath.corners[cornerNum+1]) < 1.1f)
         {
             cornerNum++;
         }
@@ -53,7 +53,8 @@ public class basicNavScript : MonoBehaviour
         {
             Debug.DrawLine(personalPath.corners[i], personalPath.corners[i + 1], Color.red);
         }
-
+        Debug.DrawLine(transform.position, personalPath.corners[cornerNum+1], Color.blue);
+        Debug.Log(Vector3.Distance(transform.position, personalPath.corners[cornerNum + 1]));
         Seek(personalPath.corners[cornerNum + 1]);
         prevPosition = target.position;
     }
@@ -63,7 +64,7 @@ public class basicNavScript : MonoBehaviour
         v = (cornerVal - transform.position).normalized * speed;
         force = v - velocity;
         velocity += force;
-        velocity = Vector3.ClampMagnitude(velocity, maxSpeed);
+        velocity = Vector3.ClampMagnitude(velocity, Vector3.Distance(transform.position, personalPath.corners[cornerNum + 1]));
         if (velocity != Vector3.zero)
         {
             Quaternion goalRotation = Quaternion.LookRotation(velocity.normalized);
