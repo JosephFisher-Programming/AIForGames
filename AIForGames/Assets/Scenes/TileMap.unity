@@ -235,7 +235,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tilePrefab: {fileID: 2659025539158239951, guid: 6da5ea5e07fa45341b8a48d802cb9049,
     type: 3}
-  numOfTiles: 10
+  targetNode: {fileID: 0}
+  numOfTiles: 5
+  nodeList: []
+  visitedNodeList: []
+  curNode: {fileID: 0}
 --- !u!4 &606012672
 Transform:
   m_ObjectHideFlags: 0
