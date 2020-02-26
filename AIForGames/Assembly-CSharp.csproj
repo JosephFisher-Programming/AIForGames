@@ -71,8 +71,10 @@
     <Compile Include="Assets\Scripts\basicSteer.cs" />
     <Compile Include="Assets\Scripts\basicWander.cs" />
     <Compile Include="Assets\Scripts\moveObject.cs" />
-    <Compile Include="Assets\Scripts\nodeScript.cs" />
+    <Compile Include="Assets\Scripts\tileMapping\nodeScript.cs" />
+    <Compile Include="Assets\Scripts\tileMapping\nodeScriptAStar.cs" />
     <Compile Include="Assets\Scripts\tileMapping\tileMap.cs" />
+    <Compile Include="Assets\Scripts\tileMapping\tileMapAStar.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/s199027/source/repos/AIForGames/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
