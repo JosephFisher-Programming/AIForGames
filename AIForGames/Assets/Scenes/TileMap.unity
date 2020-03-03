@@ -289,7 +289,7 @@ MonoBehaviour:
   tilePrefab: {fileID: 2659025539158239951, guid: dfadce59ab8a0be4e9df99e400ea386c,
     type: 3}
   targetNode: {fileID: 0}
-  numOfTiles: 5
+  numOfTiles: 10
   nodeList: []
   unvisitedNodeList: []
   visitedNodeList: []

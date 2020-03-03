@@ -8,7 +8,7 @@ public class nodeScriptAStar : MonoBehaviour
     public float moveCost;
     public float distance = Mathf.Infinity;
     public float heuristicScore;
-    float fScore;
+    public float fScore;
     public int IDNum = 0;
     public GameObject up = null;
     public GameObject down = null;
@@ -23,7 +23,7 @@ public class nodeScriptAStar : MonoBehaviour
         /*up = null;
         down = null;
         right = null;
-        left = null;*/
+        left = null;*/  
         IDDisplay.transform.position += new Vector3(transform.position.x, transform.position.z) * 15;
     }
 
@@ -40,21 +40,32 @@ public class nodeScriptAStar : MonoBehaviour
         Debug.DrawRay(transform.position, -transform.right * 1.1f, Color.yellow);
     }
 
-    public int compareAdjacent()
+    public void compareAdjacent(List<GameObject> nodeList)
     {
-        float lowestVal = Mathf.Infinity; // = new GameObject();
+        float lowestVal = Mathf.Infinity;
         GameObject corVal = null;
-        float[] moveCosts = new float[] { Mathf.Infinity, Mathf.Infinity, Mathf.Infinity, Mathf.Infinity };
-        moveCosts[0] = up.GetComponent<nodeScriptAStar>().moveCost;
-        moveCosts[1] = down.GetComponent<nodeScriptAStar>().moveCost;
-        moveCosts[2] = right.GetComponent<nodeScriptAStar>().moveCost;
-        moveCosts[3] = left.GetComponent<nodeScriptAStar>().moveCost;
-
+        float[] fScores = new float[] { Mathf.Infinity, Mathf.Infinity, Mathf.Infinity, Mathf.Infinity };
+        if (up)
+        {
+            fScores[0] = up.GetComponent<nodeScriptAStar>().fScore;
+        }
+        if (down)
+        {
+            fScores[1] = down.GetComponent<nodeScriptAStar>().fScore;
+        }
+        if (left)
+        {
+            fScores[3] = left.GetComponent<nodeScriptAStar>().fScore;
+        }
+        if (right)
+        {
+            fScores[2] = right.GetComponent<nodeScriptAStar>().fScore;
+        }
         for (int i = 0; i < 4; i++)
         {
-            if (lowestVal > moveCosts[i])
+            if (lowestVal > fScores[i])
             {
-                lowestVal = moveCosts[i];
+                lowestVal = fScores[i];
                 switch (i)
                 {
                     case 0:
@@ -88,7 +99,7 @@ public class nodeScriptAStar : MonoBehaviour
                 }
             }
         }
-        return corVal.GetComponent<nodeScriptAStar>().IDNum;
+        nodeList.Add(corVal);
     }
 
     public void AddToList(List<GameObject> nodeList)
@@ -98,24 +109,28 @@ public class nodeScriptAStar : MonoBehaviour
             nodeList.Add(up);
             up.GetComponent<nodeScriptAStar>().distance = this.distance + 1;
             up.GetComponent<nodeScriptAStar>().prevNode = this.gameObject;
+            up.GetComponent<nodeScriptAStar>().fScore = up.GetComponent<nodeScriptAStar>().distance + up.GetComponent<nodeScriptAStar>().heuristicScore;
         }
         if (down == true && !down.GetComponent<nodeScriptAStar>().isTraversed && down.GetComponent<nodeScriptAStar>().distance > this.distance + 1)
         {
             nodeList.Add(down);
             down.GetComponent<nodeScriptAStar>().distance = this.distance + 1;
             down.GetComponent<nodeScriptAStar>().prevNode = this.gameObject;
+            down.GetComponent<nodeScriptAStar>().fScore = down.GetComponent<nodeScriptAStar>().distance + down.GetComponent<nodeScriptAStar>().heuristicScore;
         }
         if (right == true && !right.GetComponent<nodeScriptAStar>().isTraversed && right.GetComponent<nodeScriptAStar>().distance > this.distance + 1)
         {
             nodeList.Add(right);
             right.GetComponent<nodeScriptAStar>().distance = this.distance + 1;
             right.GetComponent<nodeScriptAStar>().prevNode = this.gameObject;
+            right.GetComponent<nodeScriptAStar>().fScore = right.GetComponent<nodeScriptAStar>().distance + right.GetComponent<nodeScriptAStar>().heuristicScore;
         }
         if (left == true && !left.GetComponent<nodeScriptAStar>().isTraversed && left.GetComponent<nodeScriptAStar>().distance > this.distance + 1)
         {
             nodeList.Add(left);
             left.GetComponent<nodeScriptAStar>().distance = this.distance + 1;
             left.GetComponent<nodeScriptAStar>().prevNode = this.gameObject;
+            left.GetComponent<nodeScriptAStar>().fScore = left.GetComponent<nodeScriptAStar>().distance + left.GetComponent<nodeScriptAStar>().heuristicScore;
         }
         fScore = distance + heuristicScore;
     }

@@ -70,6 +70,13 @@
     <Compile Include="Assets\Scripts\basicPursue.cs" />
     <Compile Include="Assets\Scripts\basicSteer.cs" />
     <Compile Include="Assets\Scripts\basicWander.cs" />
+    <Compile Include="Assets\Scripts\decisionTrees\IDecision.cs" />
+    <Compile Include="Assets\Scripts\decisionTrees\actionTaken.cs" />
+    <Compile Include="Assets\Scripts\decisionTrees\decisionTreeRunner.cs" />
+    <Compile Include="Assets\Scripts\decisionTrees\mineTreeRunner.cs" />
+    <Compile Include="Assets\Scripts\decisionTrees\moveTargetDecision.cs" />
+    <Compile Include="Assets\Scripts\decisionTrees\printDecision.cs" />
+    <Compile Include="Assets\Scripts\decisionTrees\setTargetDecision.cs" />
     <Compile Include="Assets\Scripts\moveObject.cs" />
     <Compile Include="Assets\Scripts\tileMapping\nodeScript.cs" />
     <Compile Include="Assets\Scripts\tileMapping\nodeScriptAStar.cs" />

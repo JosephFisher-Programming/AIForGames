@@ -21,19 +21,21 @@ public class tileMapAStar : MonoBehaviour
     void Start()
     {
         createNodes();
-        
         curNode = findLowCost(nodeList);
         curNode.GetComponent<nodeScriptAStar>().isTraversed = true;
         curNode.GetComponent<nodeScriptAStar>().AddToList(unvisitedNodeList);
         unvisitedNodeList.Remove(curNode);
+        sortByFScore(unvisitedNodeList);
     }
 
     private void Update()
     {
         while (!targetNode.GetComponent<nodeScriptAStar>().isTraversed && unvisitedNodeList.Count > 0)
         {
+            
             curNode.GetComponent<nodeScriptAStar>().AddToList(unvisitedNodeList);
             curNode.GetComponent<nodeScriptAStar>().isTraversed = true;
+            sortByFScore(unvisitedNodeList);
             visitedNodeList.Add(curNode);
             unvisitedNodeList.Remove(curNode);
             curNode = unvisitedNodeList[0];
@@ -66,6 +68,7 @@ public class tileMapAStar : MonoBehaviour
             }
         }
 
+        targetNode = nodeList[nodeList.Count - 1];
         nodeList[0].GetComponent<nodeScriptAStar>().moveCost = 0;
         nodeList[0].GetComponent<nodeScriptAStar>().distance = 0;
         for (int i = 0; i < nodeList.Count; i++)
@@ -124,5 +127,21 @@ public class tileMapAStar : MonoBehaviour
             }
         }
         targetPath.Reverse();
+    }
+
+    void sortByFScore(List<GameObject> nodeList)
+    {
+        for (int j = 0; j < 4; j++)
+        {
+            for (int i = 0; i < nodeList.Count-1; i++)
+            {
+                if (nodeList[i].GetComponent<nodeScriptAStar>().fScore > nodeList[i + 1].GetComponent<nodeScriptAStar>().fScore)
+                {
+                    GameObject temp = nodeList[i];
+                    nodeList[i] = nodeList[i + 1];
+                    nodeList[i + 1] = temp;
+                }
+            }
+        }
     }
 }
