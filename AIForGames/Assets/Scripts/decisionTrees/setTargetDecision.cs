@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class setTargetDecision : IDecision
@@ -20,19 +21,11 @@ public class setTargetDecision : IDecision
         targetList = targets;
         curPlace = targetNew;
         target = targetList[curPlace];
-        
     }
 
     // evaluate the decision
     public IDecision MakeDecision()
     {
-        curPlace++;
-        if(curPlace > 3)
-        {
-            curPlace = 0;
-        }
-        target = targetList[curPlace];
-
         return null;
     }
 }

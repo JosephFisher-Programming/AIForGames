@@ -8,6 +8,7 @@ public class mineTreeRunner : MonoBehaviour
     public moveTargetDecision baseTarget;
     public actionTaken act;
     public GameObject[] targets;
+    public int curTar = 0;
     public int goldCount = 0;
     public int goldCap = 500;
     int goldSave = 500;
@@ -56,5 +57,82 @@ public class mineTreeRunner : MonoBehaviour
                 goldCap = goldSave;
             }
         }
+    }
+}
+
+public class FullOfGod : IDecision
+{
+    mineTreeRunner miner;
+    IDecision yes;
+    IDecision no;
+
+    public FullOfGod()
+    {
+        miner = null;
+    }
+
+    public FullOfGod(mineTreeRunner miner)
+    {
+        this.miner = miner;
+    }
+
+    public IDecision MakeDecision()
+    {
+        miner.curTar++;
+        if (miner.curTar > 3)
+        {
+            miner.curTar = 0;
+        }
+
+        return null;
+    }
+}
+
+public class CheckMinerLocation : IDecision
+{
+    mineTreeRunner miner;
+    IDecision yes;
+    IDecision no;
+
+    public CheckMinerLocation()
+    {
+        miner = null;
+        yes = null;
+        no = null;
+    }
+
+    public CheckMinerLocation(mineTreeRunner miner, IDecision yes, IDecision no)
+    {
+        this.miner = miner;
+        this.yes = yes;
+        this.no = no;
+    }
+
+    public IDecision MakeDecision()
+    {
+        float distance = Vector3.Distance(miner.transform.position, miner.targets[miner.curTar].transform.position);
+        return (distance < .5f ? yes : no);
+    }
+}
+
+
+public class MoveTowardsWaypoint : IDecision
+{
+    decisionTreeRunner guard;
+
+    public MoveTowardsWaypoint()
+    {
+        guard = null;
+    }
+
+    public MoveTowardsWaypoint(decisionTreeRunner guard)
+    {
+        this.guard = guard;
+    }
+
+    public IDecision MakeDecision()
+    {
+        guard.transform.position += (guard.targets[guard.curTar].transform.position - guard.transform.position) * .05f;
+        return null;
     }
 }

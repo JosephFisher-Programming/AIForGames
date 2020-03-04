@@ -17,6 +17,7 @@ public class nodeScriptAStar : MonoBehaviour
     public GameObject prevNode = null;
     public Text IDDisplay;
     public bool isTraversed = false;
+    public bool walkAble = true;
 
     private void Start()
     {
@@ -25,6 +26,7 @@ public class nodeScriptAStar : MonoBehaviour
         right = null;
         left = null;*/  
         IDDisplay.transform.position += new Vector3(transform.position.x, transform.position.z) * 15;
+        walkAble = true;
     }
 
     private void LateUpdate()
@@ -32,7 +34,11 @@ public class nodeScriptAStar : MonoBehaviour
         if (isTraversed == true)
         {
             IDDisplay.color = Color.red;
-            IDDisplay.text = Mathf.Round(fScore).ToString();
+            IDDisplay.text = Mathf.Round(distance).ToString();
+        }
+        if (walkAble == false)
+        {
+            gameObject.GetComponent<MeshRenderer>().material.color = Color.green;
         }
         Debug.DrawRay(transform.position, transform.forward * 1.1f, Color.green);
         Debug.DrawRay(transform.position, -transform.forward * 1.1f, Color.blue);

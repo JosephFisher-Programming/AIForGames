@@ -70,6 +70,7 @@
     <Compile Include="Assets\Scripts\basicPursue.cs" />
     <Compile Include="Assets\Scripts\basicSteer.cs" />
     <Compile Include="Assets\Scripts\basicWander.cs" />
+    <Compile Include="Assets\Scripts\behaviorTrees\IBehavior.cs" />
     <Compile Include="Assets\Scripts\decisionTrees\IDecision.cs" />
     <Compile Include="Assets\Scripts\decisionTrees\actionTaken.cs" />
     <Compile Include="Assets\Scripts\decisionTrees\decisionTreeRunner.cs" />

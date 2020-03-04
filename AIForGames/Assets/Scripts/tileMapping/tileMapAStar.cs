@@ -67,10 +67,26 @@ public class tileMapAStar : MonoBehaviour
                 nodeCount++;
             }
         }
+        nodeList[2].GetComponent<nodeScriptAStar>().walkAble = false;
+        nodeList[12].GetComponent<nodeScriptAStar>().walkAble = false;
+        nodeList[32].GetComponent<nodeScriptAStar>().walkAble = false;
+        nodeList[42].GetComponent<nodeScriptAStar>().walkAble = false;
+        nodeList[24].GetComponent<nodeScriptAStar>().walkAble = false;
+        nodeList[60].GetComponent<nodeScriptAStar>().walkAble = false;
+        nodeList[75].GetComponent<nodeScriptAStar>().walkAble = false;
+        nodeList[3].GetComponent<nodeScriptAStar>().walkAble = false;
+        nodeList[2].GetComponent<nodeScriptAStar>().isTraversed = true;
+        nodeList[12].GetComponent<nodeScriptAStar>().isTraversed = true;
+        nodeList[32].GetComponent<nodeScriptAStar>().isTraversed = true;
+        nodeList[42].GetComponent<nodeScriptAStar>().isTraversed = true;
+        nodeList[24].GetComponent<nodeScriptAStar>().isTraversed = true;
+        nodeList[60].GetComponent<nodeScriptAStar>().isTraversed = true;
+        nodeList[75].GetComponent<nodeScriptAStar>().isTraversed = true;
+        nodeList[3].GetComponent<nodeScriptAStar>().isTraversed = true;
 
         targetNode = nodeList[nodeList.Count - 1];
-        nodeList[0].GetComponent<nodeScriptAStar>().moveCost = 0;
-        nodeList[0].GetComponent<nodeScriptAStar>().distance = 0;
+        nodeList[22].GetComponent<nodeScriptAStar>().moveCost = 0;
+        nodeList[22].GetComponent<nodeScriptAStar>().distance = 0;
         for (int i = 0; i < nodeList.Count; i++)
         {
             nodeList[i].GetComponent<nodeScriptAStar>().heuristicScore = Vector3.Distance(nodeList[i].transform.position, targetNode.transform.position);
